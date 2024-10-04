@@ -1,1 +1,1 @@
-# FITS-PRO
+# FITSPRO

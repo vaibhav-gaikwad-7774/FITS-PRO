@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITS-PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            border-radius: 0.75rem; /* Rounded corners */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .current-day {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            border: none;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Set background image */
+        body {
+            background-image: url('https://i.pinimg.com/originals/fb/49/ee/fb49eeba2e686240a99729766cf72bf3.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+        }
+    </style>
+</head>
+<body class="p-6 flex items-center justify-center">
+    <div class="max-w-6xl mx-auto text-center">
+        <!-- Header -->
+        <h1 class="text-5xl font-bold gradient-text mb-4">
+            FITS-PRO
+        </h1>
+
+        <ul id="routine-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <li>
+                <div class="card p-6">
+                    <a href="Monday/Monday_Biceps.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Monday - Biceps
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Tuesday/Tuesday_Triceps_Shoulder.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Tuesday - Triceps + Shoulder
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Wednesday/Wednesday_Chest.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Wednesday - Chest
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Thursday/Thursday_Back.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Thursday - Back
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Friday/Friday_Leg_Abs.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Friday - Leg + Abs
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Saturday/Saturday_Rest.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Saturday - Rest
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Sunday/Sunday_Rest.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+                        Sunday - Rest
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Get current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+        const today = new Date().getDay();
+
+        // Map day of the week to list index
+        const dayLinks = document.querySelectorAll('#routine-list li a');
+
+        // Highlight the current day
+        dayLinks[today].classList.add('current-day');
+    </script>
+</body>
+</html>

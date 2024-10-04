@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Biceps Workout Routine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://www.lifebuddymobileapp.com/wp-content/uploads/2024/07/DALLE-2024-05-24-155849-A-highly-detailed-and-close-up-image-focusing-specifically-on-the-bicep-muscles-of-the-human-male-The-design-should-highlight-the-biceps-brachii-inc.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        video {
+            transition: transform 0.3s ease;
+        }
+        video:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-4xl mx-auto text-center bg-white bg-opacity-90 rounded-lg shadow-lg p-8">
+        <!-- Heading -->
+        <h1 class="text-5xl font-bold text-gray-800 mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400 animate-pulse">
+            Dynamic Biceps Workout Routine
+        </h1>
+        <ul class="space-y-8">
+            <!-- Seated Hammer Curls -->
+            <li class="p-6 bg-blue-100 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-3xl font-semibold text-gray-800">Seated Hammer Curls (Long Head)</h2>
+                <video id="video1" class="w-full max-w-lg mt-4 mx-auto rounded-md cursor-pointer" poster="https://www.lifebuddymobileapp.com/wp-content/uploads/2024/06/CnB_Seated_Hammer_Curls_3.jpg" muted>
+                    <source src="https://www.lifebuddymobileapp.com/video-stream.php?file=2024/06/CnB_Seated_Hammer_Curls_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+
+            <!-- Reverse Grip Curls -->
+            <li class="p-6 bg-blue-100 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-3xl font-semibold text-gray-800">Reverse Grip Curls (Short Head)</h2>
+                <video id="video2" class="w-full max-w-lg mt-4 mx-auto rounded-md cursor-pointer" poster="https://www.lifebuddymobileapp.com/wp-content/uploads/2024/06/CnB_Reverse_Grip_Curls_7.jpg" muted>
+                    <source src="https://www.lifebuddymobileapp.com/video-stream.php?file=2024/06/CnB_Reverse_Grip_Curls_7.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+
+            <!-- Straight Curls -->
+            <li class="p-6 bg-blue-100 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-3xl font-semibold text-gray-800">Straight Curls (Brachialis)</h2>
+                <video id="video3" class="w-full max-w-lg mt-4 mx-auto rounded-md cursor-pointer" poster="https://www.lifebuddymobileapp.com/wp-content/uploads/2024/06/CnB_Straight_Curl_8.jpg" muted>
+                    <source src="https://www.lifebuddymobileapp.com/video-stream.php?file=2024/06/CnB_Straight_Curl_8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+
+            <!-- Alternating Curls -->
+            <li class="p-6 bg-blue-100 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-3xl font-semibold text-gray-800">Alternating Curls – Biceps Overload</h2>
+                <video id="video4" class="w-full max-w-lg mt-4 mx-auto rounded-md cursor-pointer" poster="https://www.lifebuddymobileapp.com/wp-content/uploads/2024/06/CnB_Alternating_Curls_71.jpg" muted>
+                    <source src="https://www.lifebuddymobileapp.com/video-stream.php?file=2024/06/CnB_Alternating_Curls_71.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+
+            <!-- Out Curls -->
+            <li class="p-6 bg-blue-100 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-3xl font-semibold text-gray-800">Out Curls – Biceps Isolation</h2>
+                <video id="video5" class="w-full max-w-lg mt-4 mx-auto rounded-md cursor-pointer" poster="https://www.lifebuddymobileapp.com/wp-content/uploads/2024/06/CnB_Out_Curls_42.jpg" muted>
+                    <source src="https://www.lifebuddymobileapp.com/video-stream.php?file=2024/06/CnB_Out_Curls_42.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Function to toggle play/pause and ensure autoplay on play
+        function toggleVideo(videoElement) {
+            if (videoElement.paused) {
+                videoElement.play();
+                videoElement.loop = true;  // Set loop when the video is playing
+            } else {
+                videoElement.pause();
+            }
+        }
+
+        // Add event listeners to videos to toggle play/pause on click
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.addEventListener('click', () => toggleVideo(video));
+        });
+    </script>
+</body>
+</html>
