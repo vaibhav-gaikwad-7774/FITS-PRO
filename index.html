@@ -6,99 +6,151 @@
     <title>FITS-PRO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(25, 25, 112, 0.7), rgba(72, 61, 139, 0.7)), 
+                url('https://source.unsplash.com/1920x1080/?fitness,gym');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f8f9fa;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-            border-radius: 0.75rem; /* Rounded corners */
+        .card, .schedule-item {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .card:hover {
+        .card:hover, .schedule-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .current-day {
-            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
             border: none;
+            color: white !important;
         }
 
         .gradient-text {
-            background: linear-gradient(to right, #818cf8, #c084fc);
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
             -webkit-background-clip: text;
-            background-clip: text;
             color: transparent;
         }
 
-        /* Set background image */
-        body {
-            background-image: url('https://i.pinimg.com/564x/7f/1b/2d/7f1b2dc782728f9a0c3b2e14d14f5400.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+        .schedule-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="p-6 flex items-center justify-center">
+<body>
     <div class="max-w-6xl mx-auto text-center">
         <!-- Header -->
-        <h1 class="text-5xl font-bold gradient-text mb-4">
+        <h1 class="text-5xl font-bold gradient-text mb-8">
             FITS-PRO
         </h1>
 
-        <ul id="routine-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <!-- Weekly Schedule Overview -->
+        <div class="schedule-card p-6 mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Weekly Training Schedule</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Monday</span><br />
+                    Back + Biceps
+                </div>
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Tuesday</span><br />
+                    Chest + Triceps
+                </div>
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Wednesday</span><br />
+                    Legs + Abs
+                </div>
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Thursday</span><br />
+                    Shoulders + Biceps
+                </div>
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Friday</span><br />
+                    Chest + Triceps
+                </div>
+                <div class="p-4 rounded-lg schedule-item">
+                    <span class="font-semibold">Saturday</span><br />
+                    Legs + Abs
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Routine -->
+        <ul id="routine-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <li>
                 <div class="card p-6">
-                    <a href="Monday/Monday_Biceps.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
-                        Monday - Biceps
+                    <a href="Monday/Monday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-500 transition">
+                        Monday - Back + Biceps
                     </a>
                 </div>
             </li>
             <li>
                 <div class="card p-6">
-                    <a href="Tuesday/Tuesday_Triceps_Shoulder.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
-                        Tuesday - Triceps + Shoulder
+                    <a href="Tuesday/Tuesday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-purple-500 transition">
+                        Tuesday - Chest + Triceps
                     </a>
                 </div>
             </li>
             <li>
                 <div class="card p-6">
-                    <a href="Wednesday/Wednesday_Chest.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
-                        Wednesday - Chest
+                    <a href="Wednesday/Wednesday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-red-500 transition">
+                        Wednesday - Legs + Abs
                     </a>
                 </div>
             </li>
             <li>
                 <div class="card p-6">
-                    <a href="Thursday/Thursday_back.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
-                        Thursday - Back
+                    <a href="Thursday/Thursday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-green-500 transition">
+                        Thursday - Shoulders + Biceps
                     </a>
                 </div>
             </li>
             <li>
                 <div class="card p-6">
-                    <a href="Friday/Friday_Leg_Abs.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
-                        Friday - Leg + Abs
+                    <a href="Friday/Friday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-orange-500 transition">
+                        Friday - Chest + Triceps
                     </a>
                 </div>
+            </li>
+            <li>
+                <div class="card p-6">
+                    <a href="Saturday/Saturday.html" class="block text-lg font-medium text-white py-3 rounded-lg hover:bg-sky-500 transition">
+                        Saturday - Legs + Abs
+                    </a>
+                </div>
+            </li>
         </ul>
     </div>
 
     <script>
-        // Get current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
         const today = new Date().getDay();
-
-        // Map day of the week to list index
-        const dayLinks = document.querySelectorAll('#routine-list li a');
-
-        // Highlight the current day
-        dayLinks[today].classList.add('current-day');
+        if (today !== 0) {
+            const dayLinks = document.querySelectorAll('#routine-list li a');
+            dayLinks[today - 1].classList.add('current-day');
+        }
     </script>
 </body>
 </html>
